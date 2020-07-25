@@ -1,12 +1,18 @@
-import React from "react";
-import "./style.css";
+import React from 'react'
+import { Jumbotron} from 'react-bootstrap'
 
-function Title(props) {
-  return (
-  <div className= "header">
-    <h1 className="title">{props.children}</h1>
-  </div>
-  )
+function Header(props) {
+
+    return (
+        <Jumbotron className="mt-4 paper">
+ 
+            <h1 align = "center" className="pt-5">{props.title}</h1>
+            <h4 align = "center" className="pb-5">{props.subtitle}</h4>
+
+        </Jumbotron>
+
+    )
+
 }
 
-export default Title;
+export default Header

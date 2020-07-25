@@ -1,16 +1,33 @@
-import React, {Component, useState} from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Search from './pages/Search'
+import Navbar from './components/Nav'
+import Top from './pages/Top'
+import Login from './pages/Login'
 
 
-export default function App() {
+function App() {
+
+  
 
   
   return (
-    <Wrapper>
-      <Header>A Project</Header>
-    </Wrapper>
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path ='/' component={Login}/>
+            
+          <Route exact path = '/search' component = {Search} />
+           
+          <Route exact path ='/saved' component = {Top} />
+          
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
+export default App;

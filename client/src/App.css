@@ -1,61 +1,194 @@
-.App {
-  text-align: center;
+
+body {
+  margin:0 !important;
+  padding:0 !important;
+  background-color:#f5dcef !important; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/*Remove margins from navbar*/
+.navbar {
+  margin:0 !important;
+  padding:0 !important;
+  background-color:#adc5eb !important; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*move navigation links over for aesthetic reasons*/
+nav ul {
+  position: relative;
+  right: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*Add vertical divider lines between navigation links*/
+.divider {
+  height: 100%;
+  margin: 0 9px;
+  border-right: 1px solid;
+  border-left: 1px solid;
 }
 
-.App-link {
-  color: #61dafb;
+/* make text stand out*/
+.navbar-heading {
+  color:white !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* make text stand out*/
+.nav-link {
+  color: white !important;
 }
 
+/*get rid of white space and stop rounded edges*/
+.jumbotron {
+  margin-bottom: unset !important;
+  border-radius: unset !important;
+}
+
+/*set background images and style*/
 .main {
-  width: 50%;
-  margin: 50px auto;
+  background-image: url(/Assets/PerthBoathouse.jpg);
+  background-size: cover;
+  padding-bottom: 3rem;
+  background-position: center;
+
+  height: 100vh;    
 }
 
-/* Bootstrap 4 text input with search icon */
+/*style main headers*/
+.jumbotron {
+  color:#7e6643 !important;
 
-.has-search .form-control {
-  padding-left: 2.375rem;
+  font-size: 6vw !important;
+  text-shadow: 2px 2px 4px #000000 !important;
 }
 
-.has-search .form-control-feedback {
-  position: absolute;
-  z-index: 2;
-  display: block;
-  width: 2.375rem;
-  height: 2.375rem;
-  line-height: 2.375rem;
+
+/*get rid of white space and stop rounded edges*/
+.content-header {
+  background-color: #825062 !important;
+  width: 100%;
+  min-height: 20vw;
+  margin: 20px !important;
+  margin-top: unset !important;
+  margin-bottom: unset !important;
+}
+
+/*colour contact background*/
+.contact {
+  background-color: #435b7e !important;
+  position: relative;
+  min-height: fit-content;
+  
+}
+
+/*improve aesthetics*/
+section {
+  margin-top: unset !important;
+}
+
+/*style portfolio background*/
+.portfolio {
+  background-color: #e9d1c9 !important;
+  color: white !important;
+  margin-top: unset !important;
+  height: max-content !important;
+}
+
+/*colour contact container*/
+.contact-container {
+  background-color: #e9d1c9;
+  min-height: 40vw !important;
+  padding: 10px 50px 15px 50px !important;
+}
+
+/*colour portfolio container*/
+.portfolio-container {
+  background-color: #435b7e;
+  min-height: 40vw !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+/*add text to portfolio links and have it respond to container size*/
+h4.link-text {    
+  position: relative;  
+  width: auto;  
+  bottom: 5px;    
+  padding: 5px;     
+  text-align: center; 
+  color:black; 
+  background-color: #e9d1c9;
+  bottom: 50px;     
+}
+
+/*set line to be same style as header*/
+hr {
+  background-color: #7e6643 !important;
+}
+
+/*Portfolio link container*/
+.portfolio-link {
+  width: 100%; 
+  max-width: 500px;
+}
+
+/*image on portfolio link take up full container*/
+.portfolio-img {
+  width:100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border:2px solid #021a40;
+}
+
+#bio {
+  font-size: large;
+}
+
+/*Create footer*/
+.footer {
+  height: 50px;
   text-align: center;
-  pointer-events: none;
-  color: #aaa;
+  color: white;
+  font-size: small;  
+  font-weight: bold;
+  position: static;
+  bottom: 0;
+  width: 100%; 
+  background-color: #adc5eb;      
+}
+
+/*Add top border to footer*/
+.footer-border {
+  height: 5px;
+  width: 100% !important;
+}
+
+/*create padding around index page image to space out text*/
+#index-image {
+  margin: 10px;
+}
+
+/*Use margins to create better spacing*/
+.row {
+  margin-top: 30px;
+}
+
+/*Changes to formatting when screen size changes*/
+@media screen and (max-width: 640px) {
+  
+/*unset the "right" setting used for row*/
+nav ul {
+  position: relative;
+  right: unset;
+}
+
+/*Keep navbar links centred when turning to column*/
+.navbar-nav {
+  margin: auto;
+}
+
+p, i, span {
+  font-size: smaller !important;
+}
+
 }
