@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import SliderContent from '../SliderContent'
 
-export default class SimpleSlider extends Component {
-  render() {
+export default function SimpleSlider ({books}) {
+
+
+    console.log("books", books);
+
+    
+
     const settings = {
       dots: true,
       infinite: true,
@@ -10,29 +16,15 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+        {books.map((book) => (
+            <SliderContent key={book.id || book._id} {...book} />
+        ))}
         </Slider>
       </div>
     );
-  }
+
 }

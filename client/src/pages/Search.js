@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchInput from '../components/SearchInput';
 import BookList from '../components/BookList';
 import API from '../utils/API';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../components/Header'
+import axios from 'axios'
+import AOS from "aos";
 
 
 export default function Search() {
@@ -31,6 +33,23 @@ export default function Search() {
         setBooks(books)
     }
 
+
+
+    function getBooks() {
+        axios.get('/api/books')
+        .then((results) =>  {
+            console.log(results)
+            setBooks(results.data)
+        })
+    }
+
+    // listen to state changes
+    useEffect(() => {
+        //will only run once when component mounted
+        getBooks()
+        AOS.init();
+    },[])
+
     return (
         <>
             <Header title = {"Something else"} />
@@ -46,13 +65,13 @@ export default function Search() {
                 </Row>
             </Container>
             
-            <Container className="mt-4">
-                <Row>
-                    <Col>
-                        <BookList books={books}/>
-                    </Col>
-                </Row>
-            </Container>
+            
+     
+                   
+            <BookList books={books}/>
+         
+ 
+
 
         </>
     )

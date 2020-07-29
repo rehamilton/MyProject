@@ -1,8 +1,52 @@
+.bookImage {
+  max-block-size: 75pc;
+}
+
+.card {
+
+
+}
+
+.card-action {
+  position: fixed;
+}
+
+.sliderImage {
+  background-size: cover;
+  margin-right: 10px !important;
+
+}
+
+.sliderText {
+  margin-left: 10px
+}
 
 body {
   margin:0 !important;
   padding:0 !important;
-  background-color:#f5dcef !important; 
+  background-color:#ffcdd2 !important; 
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.position-badge {
+  background-color: #d50000 ;
+  color:black;
+  font-weight: bold;
+  font-size: x-large;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding-top: 6px;
+  text-align: center;
+  
 }
 
 
@@ -54,11 +98,14 @@ nav ul {
 }
 
 /*style main headers*/
-.jumbotron {
-  color:#7e6643 !important;
-
-  font-size: 6vw !important;
+.header {
+  background-image: url(/Assets/Books.jpg) !important;
+  background-size: cover;
+  color: white !important;
+  font-size: 5vw !important;
   text-shadow: 2px 2px 4px #000000 !important;
+  height: 300px;
+  top: -100px
 }
 
 

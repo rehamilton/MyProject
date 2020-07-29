@@ -36,7 +36,6 @@ function LoginPage( ) {
 
   }
 
-
   return (
 
     <div className='container'>
@@ -51,7 +50,6 @@ function LoginPage( ) {
         />
     </div>
   )
-
 
 }
 

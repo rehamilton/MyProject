@@ -8,21 +8,26 @@ function SearchInput({ search, onSearchChange, onSearch }) {
 
     return (
 
-        <Card>
-            <Form onSubmit={onSearch}>
-                <Form.Group controlId="book-title" className= "m-2">
-                    <p className = "font-weight-bold">Book Search</p>
-                    <Form.Control 
-                        value={search} 
-                        onChange={evt => onSearchChange(evt.target.value)} 
-                        placeholder="Enter book title" 
-                    />
-                </Form.Group>
-                <Button variant="primary" type="submit" className = "float-right m-2">
-                    Search
-                </Button>
-            </Form>
-        </Card>
+        <>
+            <div class="row">
+                <form class="col s12" onSubmit={onSearch}>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">search</i>
+                        <textarea 
+                            id="icon_prefix2" 
+                            class="materialize-textarea" 
+                            value={search} 
+                            onChange={evt => onSearchChange(evt.target.value)}
+                        >
+
+                        </textarea>
+                        <label for="icon_prefix2">Book Title</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </>
     )
 
 }

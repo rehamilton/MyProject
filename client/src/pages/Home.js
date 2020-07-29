@@ -7,11 +7,13 @@ import Header from '../components/Header'
 import Slider from '../components/Slider'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SearchInput from '../components/SearchInput'
 
 
-export default function Search() {
+export default function Home() {
 
     const[books, setBooks] = useState([])
+    const [search, setSearch] = useState('');
 
     const onDelete = API.deleteBook
 
@@ -36,6 +38,8 @@ export default function Search() {
     return (
         <Container className="mt-4">
             <Header title = {"Top 101 Books"}/>
+            <SearchInput />
+            <Slider books={books} onDelete ={onDelete}/>
             <Row>
                 <Col>
                     <BookList books={books} onDelete ={onDelete}/>

@@ -5,46 +5,42 @@ import React from 'react';
 import { Row, Col, ListGroup, Image, Button, Card } from 'react-bootstrap'
 
 
-function BookListItem( { _id, id, title, description, link, author, image, onSave, onDelete }) {
+function BookListItem( { _id, id, title, description, link, author, image, position, onSave, onDelete }) {
+
+    
 
     return( 
 
-        <ListGroup.Item >
-            <Card>
-                <Row>
-                    <Col m={9}>
-                        <h2>{title}</h2>
-                    </Col>
-                    {/* <Col m={3}>
-                        {link && <Button as="a" href={link} className = "float-right m-1" target="_blank">View</Button>}
-                        {onSave && (
-                            <Button 
-                            className = "float-right m-1"
-                            onClick={() => {onSave({title, description, image, link, author})}}>
-                                Save
-                            </Button>
-                        )}
-                        {onDelete && (<Button className = "float-right m-1" onClick={() => onDelete({_id})} 
-                            variant="danger">Delete</Button>
-                        )}
-                    </Col> */}
-                </Row>
-                <Row>
-                    <Col>
-                        <p>{author && author.join(", ")}</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={3}>
-                        <Image src={image || ""} alt="cover" />
-                    </Col>
-                    <Col>
-                        <p>{description}</p>
-                    </Col>
-                </Row>
-            </Card>
-        </ListGroup.Item>
-
+        <div className= "col s4 m4 l4"> 
+            <div className="card sticky-action">
+                <div className="card-image waves-effect waves-block waves-light">
+                    <div className="position-badge">{position}</div>
+                    <img className="activator bookImage" src={image} alt= {title}/>
+                </div>
+                <div className="card-content">
+                    <span className="card-title activator grey-text text-darken-4">{title}<i className="material-icons right">more_vert</i></span>
+                </div>
+                <div className = "card-action">
+                    <a href={link} target="_blank">More Info</a>
+                    {onSave && (
+                        <a 
+                        className="waves-effect waves-light btn" 
+                        onClick={() => {onSave({title, description, image, link, author})}}>
+                            Save
+                        </a>
+                    )}
+                    {onDelete && (<a 
+                        className="waves-effect waves-light btn"
+                        onClick={() => onDelete({_id})} 
+                        variant="danger">Remove</a>
+                    )}
+                </div>
+                <div className="card-reveal">
+                    <span className="card-title grey-text text-darken-4 flow-text"><i className="material-icons right">close</i>{title}</span>
+                <p>{description}</p>
+                </div>
+            </div>
+        </div>
 
     )
 

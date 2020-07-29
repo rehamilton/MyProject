@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
-const infoSchema = new Schema ({
+const myListSchema = new Schema ({
     userId: {
         type: String,
         required: true
@@ -22,6 +22,6 @@ const infoSchema = new Schema ({
     }
 })
 
-const Info = mongoose.model("Info", infoSchema)
+const MyList = mongoose.model("MyList", myListSchema)
 
-module.exports = Info
+module.exports = MyList

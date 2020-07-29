@@ -1,25 +1,24 @@
 import React from 'react';
 import BookListItem from '../BookListItem';
 
-import { ListGroup, Card, Row } from 'react-bootstrap';
-
 function BookList({ books, onDelete }) {
 
 
 
     return(
 
-        <Card>
-            <Card.Title className="p-2">Results</Card.Title>
+        <div className = "row">
+            <div className = "col m12 s12 l12" >
+                <div className="card-panel">
+                    <div className = "row flex">
+                        {books.map((book) => (
+                            <BookListItem key={book.id || book._id} {...book} onDelete={onDelete} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <Card.Body className="p-2">
-                <ListGroup>
-                    {books.map((book) => (
-                        <BookListItem key={book.id || book._id} {...book} onDelete={onDelete} />
-                    ))}
-                </ListGroup>
-            </Card.Body>
-        </Card>
 
     )
 

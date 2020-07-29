@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Search from './pages/Search'
 import Navbar from './components/Nav'
-import Top from './pages/Top'
+import Home from './pages/Home'
 import Login from './pages/Login'
 
 
@@ -22,7 +22,7 @@ function App() {
             
           <Route exact path = '/search' component = {Search} />
            
-          <Route exact path ='/saved' component = {Top} />
+          <Route exact path ='/home' component = {Home} />
           
         </Switch>
       </div>

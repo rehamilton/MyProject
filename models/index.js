@@ -1,9 +1,9 @@
 const Book = require('./book')
 const User = require('./user')
-const Info = require('./Info')
+const MyList = require('./myList')
 
 module.exports = {
     Book,
     User,
-    Info
+    MyList
 };
